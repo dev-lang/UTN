@@ -1,0 +1,66 @@
+-- INSERTAR DATOS EN LA DB
+-- la base de datos DEBE tener ejecutado el PASO3 (FIX) antes de proceder
+
+INSERT INTO ALUMNOS (Alu_Legajo, Alu_Nombre, Alu_Apellido, Alu_FecIngreso) VALUES (100150,'Rafael','Guido','10/10/2020')
+INSERT INTO ALUMNOS (Alu_Legajo, Alu_Nombre, Alu_Apellido, Alu_FecIngreso) VALUES (100151,'María','Del Puerto','10/10/2020')
+INSERT INTO ALUMNOS (Alu_Legajo, Alu_Nombre, Alu_Apellido, Alu_FecIngreso) VALUES (100152,'Susana','De Luca','10/10/2020')
+INSERT INTO ALUMNOS (Alu_Legajo, Alu_Nombre, Alu_Apellido, Alu_FecIngreso) VALUES (100153,'Juan','Pizzi','10/10/2020')
+INSERT INTO ALUMNOS (Alu_Legajo, Alu_Nombre, Alu_Apellido, Alu_FecIngreso) VALUES (100154,'Manuel','Gonzalez','10/10/2020')
+
+INSERT INTO CARRERAS (Car_Codigo, Car_Nombre) VALUES ('001','Ingeniería en Sistemas')
+INSERT INTO CARRERAS (Car_Codigo, Car_Nombre) VALUES ('002','Arquitectura')
+INSERT INTO CARRERAS (Car_Codigo, Car_Nombre) VALUES ('003','Ingeniería Industrial')
+-- ok
+INSERT INTO DEPARTAMENTOS (Dep_Codigo, Dep_Nombre) VALUES ('MAT','Matematicas')
+INSERT INTO DEPARTAMENTOS (Dep_Codigo, Dep_Nombre) VALUES ('IDI','Idiomas')
+INSERT INTO DEPARTAMENTOS (Dep_Codigo, Dep_Nombre) VALUES ('SIS','Sistemas')
+
+INSERT INTO MATERIAS (Mat_Codigo, Mat_Nombre, Dep_codigo) VALUES ('401','Analisis Matematico 1','MAT')
+INSERT INTO MATERIAS (Mat_Codigo, Mat_Nombre, Dep_codigo) VALUES ('402','Algebra','MAT')
+INSERT INTO MATERIAS (Mat_Codigo, Mat_Nombre, Dep_codigo) VALUES ('903','Algoritmos','SIS')
+INSERT INTO MATERIAS (Mat_Codigo, Mat_Nombre, Dep_codigo) VALUES ('904','Programación 1','SIS')
+INSERT INTO MATERIAS (Mat_Codigo, Mat_Nombre, Dep_codigo) VALUES ('905','Programación 2','SIS')
+INSERT INTO MATERIAS (Mat_Codigo, Mat_Nombre, Dep_codigo) VALUES ('204','Ingles Técnico 1','IDI')
+-- ok
+INSERT INTO PROFESORES (Pro_legajo, Pro_Nombre, Pro_Apellido, Pro_Fecnac) VALUES (73001,'Fernando','Rolon','01/02/1985')
+INSERT INTO PROFESORES (Pro_legajo, Pro_Nombre, Pro_Apellido, Pro_Fecnac) VALUES (73002,'Ivan','Perez','01/02/1985')
+INSERT INTO PROFESORES (Pro_legajo, Pro_Nombre, Pro_Apellido, Pro_Fecnac) VALUES (73003,'Fernando','Kifel','01/02/1985')
+INSERT INTO PROFESORES (Pro_legajo, Pro_Nombre, Pro_Apellido, Pro_Fecnac) VALUES (73004,'Roxana','Sosa','01/02/1985')
+INSERT INTO PROFESORES (Pro_legajo, Pro_Nombre, Pro_Apellido, Pro_Fecnac) VALUES (73009,'Andres','Muñiz','01/02/1985')
+-- ok
+INSERT INTO CARRERAS_MATERIAS (Car_Codigo, Mat_Codigo) VALUES ('001','401')
+INSERT INTO CARRERAS_MATERIAS (Car_Codigo, Mat_Codigo) VALUES ('001','402')
+INSERT INTO CARRERAS_MATERIAS (Car_Codigo, Mat_Codigo) VALUES ('001','903')
+INSERT INTO CARRERAS_MATERIAS (Car_Codigo, Mat_Codigo) VALUES ('001','904')
+INSERT INTO CARRERAS_MATERIAS (Car_Codigo, Mat_Codigo) VALUES ('001','905')
+INSERT INTO CARRERAS_MATERIAS (Car_Codigo, Mat_Codigo) VALUES ('001','204')
+INSERT INTO CARRERAS_MATERIAS (Car_Codigo, Mat_Codigo) VALUES ('003','401')
+INSERT INTO CARRERAS_MATERIAS (Car_Codigo, Mat_Codigo) VALUES ('003','402')
+INSERT INTO CARRERAS_MATERIAS (Car_Codigo, Mat_Codigo) VALUES ('003','204')
+INSERT INTO CARRERAS_MATERIAS (Car_Codigo, Mat_Codigo) VALUES ('002','204')
+-- ok
+INSERT INTO MATERIAS_PROFESORES (Pro_Legajo, Mat_Codigo) VALUES (73001,'401')
+INSERT INTO MATERIAS_PROFESORES (Pro_Legajo, Mat_Codigo) VALUES (73001,'402')
+INSERT INTO MATERIAS_PROFESORES (Pro_Legajo, Mat_Codigo) VALUES (73004,'401')
+INSERT INTO MATERIAS_PROFESORES (Pro_Legajo, Mat_Codigo) VALUES (73002,'903')
+INSERT INTO MATERIAS_PROFESORES (Pro_Legajo, Mat_Codigo) VALUES (73002,'904')
+INSERT INTO MATERIAS_PROFESORES (Pro_Legajo, Mat_Codigo) VALUES (73002,'905')
+INSERT INTO MATERIAS_PROFESORES (Pro_Legajo, Mat_Codigo) VALUES (73003,'401')
+INSERT INTO MATERIAS_PROFESORES (Pro_Legajo, Mat_Codigo) VALUES (73003,'204')
+-- ok
+INSERT INTO CURSOS (Cur_Codigo, Mat_Codigo, Pro_Legajo, Cur_Horario, Cur_Sede) VALUES ('K01','401',73001,'09:00','Medrano')
+INSERT INTO CURSOS (Cur_Codigo, Mat_Codigo, Pro_Legajo, Cur_Horario, Cur_Sede) VALUES ('K02','402',73001,'12:00','Avellaneda')
+INSERT INTO CURSOS (Cur_Codigo, Mat_Codigo, Pro_Legajo, Cur_Horario, Cur_Sede) VALUES ('K03','903',73002,'16:00','Medrano')
+INSERT INTO CURSOS (Cur_Codigo, Mat_Codigo, Pro_Legajo, Cur_Horario, Cur_Sede) VALUES ('K04','903',73002,'20:00','Mozart')
+INSERT INTO CURSOS (Cur_Codigo, Mat_Codigo, Pro_Legajo, Cur_Horario, Cur_Sede) VALUES ('K05','401',73002,'22:00','Medrano')
+INSERT INTO CURSOS (Cur_Codigo, Mat_Codigo, Pro_Legajo, Cur_Horario, Cur_Sede) VALUES ('M01','401',73002,'09:00','Medrano')
+INSERT INTO CURSOS (Cur_Codigo, Mat_Codigo, Pro_Legajo, Cur_Horario, Cur_Sede) VALUES ('M02','401',73003,'12:00','Mozart')
+INSERT INTO CURSOS (Cur_Codigo, Mat_Codigo, Pro_Legajo, Cur_Horario, Cur_Sede) VALUES ('M03','204',73003,'19:00','Medrano')
+-- ok
+INSERT INTO CURSOS_ALUMNOS(Cur_Codigo, Alu_Legajo) VALUES ('K01','100150')
+INSERT INTO CURSOS_ALUMNOS(Cur_Codigo, Alu_Legajo) VALUES ('K01','100151')
+INSERT INTO CURSOS_ALUMNOS(Cur_Codigo, Alu_Legajo) VALUES ('K01','100152')
+INSERT INTO CURSOS_ALUMNOS(Cur_Codigo, Alu_Legajo) VALUES ('M01','100150')
+INSERT INTO CURSOS_ALUMNOS(Cur_Codigo, Alu_Legajo) VALUES ('K05','100153')
+INSERT INTO CURSOS_ALUMNOS(Cur_Codigo, Alu_Legajo) VALUES ('M03','100154')
+-- ok
